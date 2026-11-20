@@ -603,6 +603,16 @@
   .statement .punch.in { opacity: 1; transform: none; }
   @keyframes punchflow { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
   @media (prefers-reduced-motion: reduce) { .statement .punch { opacity: 1; transform: none; transition: none; } .statement .punch .w1 { animation: none; } }
+  .why-list { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; border-top: 3px solid var(--blue); }
+  .why-list li { padding-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+  .why-list strong { font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1; color: var(--blue-ink); letter-spacing: -0.02em; }
+  .why-list span { font-size: 1.02rem; line-height: 1.5; }
+  .why-list small { color: var(--muted); font-size: 0.85rem; }
+  .why-end { margin-top: 30px; font-size: 1.15rem; font-weight: 600; color: var(--blue-ink); }
+  @media (max-width: 760px) { .why-list { grid-template-columns: 1fr; } }
+  .pweb { display: inline-block; margin-top: 8px; font-size: 0.9rem; font-weight: 600; }
+  .person h3 a { color: inherit; text-decoration: none; }
+  .person h3 a:hover { text-decoration: underline; }
 </style>
 
 <nav class="navbar" aria-label="Main"><div class="wrap">
@@ -636,11 +646,8 @@
 
     <div class="wrap">
       <div class="statement" id="statement">
-        <p class="big words">In the UK, women earn <em>27.9%</em> of computing degrees and <em>23.2%</em> in engineering.</p>
-        <p class="src">HESA data 2024/25, <a href="https://wise.theiet.org/resources-and-impact/research-and-statistics/higher-education-statistics-20242025/" target="_blank" rel="noopener">via WISE</a></p>
-        <p class="big words more">They are <em>nearly half</em> of academic staff, but <em>one in three</em> professors, and <em>one in four</em> in STEM.</p>
-        <p class="src">HESA staff data 2024/25, <a href="https://www.emilynordmann.com/post/2026-03-09-teaching-only/index.html" target="_blank" rel="noopener">analysis by Emily Nordmann</a>. STEM: <a href="https://www.royalsociety.org/-/media/about-us/who-we-are/diversity/women-in-stem-hesa-data-analysis.pdf" target="_blank" rel="noopener">Royal Society analysis of HESA data, 2022/23</a></p>
-        <p class="big builds punch"><span class="w1">WHEN</span> <span class="w2">brings these women together.</span></p>
+        <p class="big words">A place to <em>meet</em>, <em>share</em> and <em>grow</em>, for women across Queen Mary.</p>
+        <p class="big builds punch"><span class="w1">WHEN</span> <span class="w2">brings us together.</span></p>
       </div>
     </div>
 
@@ -719,6 +726,9 @@
             <h2>Vision</h2>
             <p>We believe that the most open discussions and natural professional collaborations occur with a bottom-up approach. Our activities are shaped by the needs and expectations of our community, and we aim to make events accessible online for women who cannot attend in person.</p>
             <p>Building a community also makes it easier to start research collaborations, receive advice from more experienced researchers and discuss difficult questions in a safe space. In the long term, we would like WHEN to become a network of networks across the Faculty of Science and Engineering.</p>
+            <h2 style="margin-top:40px">Why it matters</h2>
+            <p>In the UK, women earned 27.9% of computing degrees and 23.2% of engineering and technology degrees in 2024/25 (<a href="https://wise.theiet.org/resources-and-impact/research-and-statistics/higher-education-statistics-20242025/" target="_blank" rel="noopener">HESA data via WISE</a>). Women are nearly half of all academic staff, yet only one professor in three is a woman (<a href="https://www.emilynordmann.com/post/2026-03-09-teaching-only/index.html" target="_blank" rel="noopener">HESA staff data 2024/25</a>), and in STEM only one in four (<a href="https://www.royalsociety.org/-/media/about-us/who-we-are/diversity/women-in-stem-hesa-data-analysis.pdf" target="_blank" rel="noopener">Royal Society, 2022/23</a>).</p>
+            <p>This is why WHEN supports women at every stage of their academic life, from their first degree to leadership roles.</p>
           </div>
         </div>
       </div>
@@ -870,7 +880,8 @@
       <div class="section">
         <h2>Animated WHEN logo</h2>
         <div class="yt yt-logo"><button type="button" class="yt-btn" data-yt="Pccog7HLXvQ" aria-label="Play video: Animated WHEN logo by Nelly Garcia"><img src="media/img/9d155d03dfa4.png" alt=""><span class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5v14l11-7z" fill="#FFFFFF"></path></svg></span></button></div>
-        <p class="muted">Sound design and animation by Nelly Garcia. The sound embodies the values at the heart of WHEN: diversity, innovation, collaboration and resilience. Every note reflects our commitment to being supportive, empowering and future-focused as we support women in higher education.</p>
+        <p class="muted">Sound design and animation by <a href="https://nellyngz.com/" target="_blank" rel="noopener">Nelly Garcia</a>. The sound embodies the values at the heart of WHEN: diversity, innovation, collaboration and resilience. Every note reflects our commitment to being supportive, empowering and future-focused as we support women in higher education.</p>
+        <p style="margin-top:14px"><a class="btn" href="https://www.youtube.com/watch?v=Pccog7HLXvQ" target="_blank" rel="noopener">Watch on YouTube</a></p>
       </div>
     </div>
   </section>
@@ -994,13 +1005,13 @@ var MEMBERS = [
   { name: "Prof Maria Liakata", img: "maria", role: "Professor in Natural Language Processing, EECS", text: "EPSRC/UKRI Turing AI Fellow, creating time-sensitive sensors from language and heterogeneous user-generated content." },
   { name: "Dr Michaela Macdonald", img: "michaela", role: "Lecturer in Management, EECS", text: "Cybersecurity law, IoT product development and management, and product development and marketing." },
   { name: "Dr Laurissa Tokarchuk", img: "laurissa", role: "Senior Lecturer, EECS", text: "Mobile and location-based gaming, data-driven methods for HCI, social sensing, recommendation and game AI.", rg: "Game AI, Cognitive Science, Centre for Intelligent Sensing" },
-  { name: "Nelly Garcia", img: "nelly", role: "PhD researcher, C4DM", text: "Research in sound design for cinematic effects. Nelly created the sound and animation of the animated WHEN logo.", rg: "C4DM" },
+  { name: "Nelly Garcia", img: "nelly", url: "https://nellyngz.com/", role: "PhD researcher, C4DM", text: "Research in sound design for cinematic effects. Nelly created the sound and animation of the animated WHEN logo.", rg: "C4DM" },
   { name: "Sara Cardiale", img: "sara", role: "PhD researcher, C4DM", text: "Research on the sound features that best convey the character and personality of figures such as video game characters.", rg: "C4DM" },
   { name: "Dr Elona Shatri", img: "elona", role: "Researcher, EECS", text: "Optical music recognition using deep learning, and teaching in machine learning for visual data analysis.", rg: "C4DM" },
   { name: "Dr Mojan Omidvar", img: "mojan", role: "Researcher, EECS", text: "Self-driving laboratory automation." },
   { name: "María José Barrera-Chávez", img: "mariajose", role: "PhD candidate, DERI", text: "Computer science applications in sports medicine." }
 ];
-var PHOTOS = {"sara": "media/img/879335b74c66.jpg", "katja": "media/img/fbaa45af94df.jpg", "anna": "media/img/9cb9a4552d5d.jpg", "laura": "media/img/c3dc724fa2af.jpg", "antonella": "media/img/fa26f445c4e4.jpg", "mona": "media/img/e0b898af7e01.jpg", "aisha": "media/img/3a3de692d31d.jpg", "maria": "media/img/57005e00e242.jpg", "michaela": "media/img/b32c3863b981.jpg", "laurissa": "media/img/922441324f0b.jpg", "elona": "media/img/09bf2a43d8eb.jpg", "mojan": "media/img/a56110fe5a33.jpg", "mariajose": "media/img/3707b28bdbc5.jpg"};
+var PHOTOS = {"nelly": "media/img/6670d47f5e41.jpg", "sara": "media/img/879335b74c66.jpg", "katja": "media/img/fbaa45af94df.jpg", "anna": "media/img/9cb9a4552d5d.jpg", "laura": "media/img/c3dc724fa2af.jpg", "antonella": "media/img/fa26f445c4e4.jpg", "mona": "media/img/e0b898af7e01.jpg", "aisha": "media/img/3a3de692d31d.jpg", "maria": "media/img/57005e00e242.jpg", "michaela": "media/img/b32c3863b981.jpg", "laurissa": "media/img/922441324f0b.jpg", "elona": "media/img/09bf2a43d8eb.jpg", "mojan": "media/img/a56110fe5a33.jpg", "mariajose": "media/img/3707b28bdbc5.jpg"};
 
 /* Site pictures. Paste an image link (or a file name next to the page) between the quotes.
    Empty quotes leave the space empty, with a small picture icon. */
@@ -1230,7 +1241,7 @@ var SITE_FIT = { "band-join": "contain" };
   // Team
   function person(p) {
     var img = PHOTOS[p.img] ? '<img src="' + PHOTOS[p.img] + '" alt="" width="120" height="120" loading="lazy">' : '<div class="ph" aria-hidden="true"></div>';
-    return '<div class="person">' + img + '<div><h3>' + esc(p.name) + '</h3><div class="role">' + esc(p.role) + '</div><p>' + esc(p.text) + '</p>' + (p.rg ? '<div class="rg">Research groups: ' + esc(p.rg) + '</div>' : '') + '</div></div>';
+    return '<div class="person">' + img + '<div><h3>' + (p.url ? '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.name) + '</a>' : esc(p.name)) + '</h3><div class="role">' + esc(p.role) + '</div><p>' + esc(p.text) + '</p>' + (p.rg ? '<div class="rg">Research groups: ' + esc(p.rg) + '</div>' : '') + (p.url ? '<a class="pweb" href="' + esc(p.url) + '" target="_blank" rel="noopener">Personal website</a>' : '') + '</div></div>';
   }
   document.getElementById('organisers').innerHTML = ORGANISERS.map(person).join('');
   document.getElementById('members').innerHTML = MEMBERS.map(person).join('');
